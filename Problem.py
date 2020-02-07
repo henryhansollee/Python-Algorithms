@@ -1,19 +1,6 @@
 import sys
 sys.stdin = open("Input.txt", "r")
 
-t = int(input())
-for tc in range(1, t+1):
-    nums = input()
-    year = nums[:4]
-    month = nums[4:6]
-    day = nums[6:]
-    ans = ''
-    if int(month) > 0:
-        if int(day) > 0:
-            ans = year + '/' + month + '/' + day
-        if month == '02':
-            if int(day) > 28:
-                ans = -1
-    else:
-        ans = -1
-    print("#{} {}".format(tc, ans))
+words = input()
+for word in words:
+    print(ord(word)-64, end=' ')
