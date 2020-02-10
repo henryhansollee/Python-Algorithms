@@ -1,5 +1,5 @@
 import sys
 sys.stdin = open("Input.txt", "r")
 
-n = int(input())
-print('#' * n)
+P, K = map(int, input().split())
+print(P-K+1)
