@@ -1,25 +1,25 @@
 import sys
 sys.stdin = open("Input.txt", "r")
 
-t = int(input())
-for tc in range(1, t+1):
-    N, K = map(int, input().split())
-    board = [list(map(int, input().split())) for _ in range(N)]
-    ans = 0
-    for i in range(N):
-        cnt = 0
-        for j in range(N):
-            if board[i][j]:
-                cnt += 1
-            if not board[i][j] or j == N-1:
-                if cnt == K:
-                    ans += 1
-                cnt = 0
-        for k in range(N):
-            if board[k][i]:
-                cnt += 1
-            if not board[k][i] or k == N-1:
-                if cnt == K:
-                    ans += 1
-                cnt = 0
-    print("#{} {}".format(tc, ans))
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
+
+N = 1041
+def solution(N):
+    # write your code in Python 3.6
+    binary = bin(N)
+    binary_num = binary[2:]
+    print(binary)
+    print(binary_num)
+    one_index = []
+    for index, value in enumerate(binary):
+        if value == '1':
+            one_index.append(index)
+    print(one_index)
+
+    binary_gap = []
+    binary_gap.append(0)
+    for idx in range(len(one_index)-1):
+        binary_gap.append(one_index[idx+1] - one_index[idx] - 1)
+    return max(binary_gap)
+print(solution(N))
