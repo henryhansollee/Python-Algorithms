@@ -17,5 +17,11 @@ def solution(N, A):
         else:
             max_num = next_max_num
         # print(ans)
-    return [x if x > max_num else max_num for x in ans]
+    answer = []
+    for i in range(len(ans)):
+        if ans[i] > max_num:
+            answer.append(ans[i])
+        else:
+            answer.append(max_num)
+    return answer
 ```
