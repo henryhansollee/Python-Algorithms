@@ -34,8 +34,8 @@
 
 - [x] CountDiv
 - [x] GenomicRangeQuery
-- [ ] MinAvgTwoSlice
-- [ ] PassingCars
+- [x] MinAvgTwoSlice
+- [x] PassingCars
 
 
 

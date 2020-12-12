@@ -1,24 +1,14 @@
 # BinaryGap
 ```python
-# you can write to stdout for debugging purposes, e.g.
-# print("this is a debug message")
-
 def solution(N):
-    # write your code in Python 3.6
-    # print(N)
-    binary_num = bin(N)
-    # print(binary_num, type(binary_num))
-    ones = []
-    for i in range(len(binary_num)):
-        if binary_num[i] == '1':
-            ones.append(i)
-    # print(ones)
-    gaps = []
-    for i in range(len(ones)-1):
-        gaps.append(ones[i+1] - ones[i] - 1)
-    # print(gaps)
-    if gaps:
-        return max(gaps)
-    else:
-        return 0
+    bin_num = bin(N)
+    only_bin_num = bin_num[2:]
+    index_list = []
+    for index, value in enumerate(only_bin_num):
+        if value == '1':
+            index_list.append(index)
+    ans = [0]
+    for i in range(len(index_list)-1):
+        ans.append(index_list[i+1] - index_list[i] - 1)
+    return max(ans)
 ```
